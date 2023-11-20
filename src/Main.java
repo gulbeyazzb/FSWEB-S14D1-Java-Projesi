@@ -44,19 +44,22 @@ public class Main {
     }
 
     public static void createEmployee() {
-        Employee employee = new Employee(1, "Gülbeyaz", 50000);
-        System.out.println("employee: " + employee);
-        JuniorDeveloper juniorDeveloper = new JuniorDeveloper(2, "Maya", 55000, "junior");
-        juniorDeveloper.work();
-        System.out.println(juniorDeveloper.getSalary());
+        JuniorDeveloper jundevelopers=new JuniorDeveloper(1,"Gülbeyaz");
+        MidDeveloper middevelopers=new MidDeveloper(2,"Maya");
+        SeniorDeveloper sendevelopers=new SeniorDeveloper(3,"Mehmet");
+        jundevelopers.work();
+        middevelopers.work();
+        sendevelopers.work();
+        System.out.println(jundevelopers);
+        System.out.println(middevelopers);
+        System.out.println(sendevelopers);
 
-        String[] jundevelopers=new String[4];
-        String[] middevelopers=new String[4];
-        String[] sendevelopers=new String[4];
-        HRManager hrManager=new HRManager(3,"Mehmet",60000,jundevelopers,middevelopers,sendevelopers);
-        System.out.println("**************");
-        hrManager.addEmployee(3,"Gülbeyaz","mid");
-        System.out.println(hrManager);
+        System.out.println("***************");
+
+        HRManager hrManager=new HRManager(4,"Doğancan",new JuniorDeveloper[3],new MidDeveloper[1],new SeniorDeveloper[4]);
+        hrManager.work();
+        hrManager.addEmployee(0,jundevelopers);
+        hrManager.addEmployee(0,middevelopers);
     }
 
     public static void main(String[] args) {

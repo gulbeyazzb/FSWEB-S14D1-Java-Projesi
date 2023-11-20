@@ -2,10 +2,8 @@ package com.workintech.inheritance.model;
 
 public class MidDeveloper extends  Employee{
 
-    private String role;
-    public MidDeveloper(long id, String name, double salary,String role) {
-        super(id, name, salary);
-        this.role=role;
+    public MidDeveloper(long id, String name) {
+        super(id, name);
     }
 
 
@@ -15,10 +13,5 @@ public class MidDeveloper extends  Employee{
         setSalary(70000);
     }
 
-    @Override
-    public String toString() {
-        return "MidDeveloper{" +
-                "role='" + role + '\'' +
-                '}';
-    }
+
 }

@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public class HRManager extends Employee {
 
-    private String[] juniorDeveloper;
-    private String[] midDeveloper;
-    private String[] seniorDeveloper;
+    private JuniorDeveloper[] juniorDeveloper;
+    private MidDeveloper[] midDeveloper;
+    private SeniorDeveloper[] seniorDeveloper;
 
 
-    public HRManager(long id, String name, double salary, String[] juniorDeveloper, String[] midDeveloper, String[] seniorDeveloper) {
-        super(id, name, salary);
+    public HRManager(long id, String name, JuniorDeveloper[] juniorDeveloper, MidDeveloper[] midDeveloper, SeniorDeveloper[] seniorDeveloper) {
+        super(id, name);
         this.juniorDeveloper = juniorDeveloper;
         this.midDeveloper = midDeveloper;
         this.seniorDeveloper = seniorDeveloper;
@@ -22,51 +22,46 @@ public class HRManager extends Employee {
         setSalary(90000);
     }
 
-    public void addEmployee(int index, String name, String role) {
+    public void addEmployee(int index, JuniorDeveloper name) {
 
-        if (role.equals("junior")) {
-            if (index >= juniorDeveloper.length) {
-                System.out.println("index is greater than length of the array");
-            } else {
-                for (int i = 0; i < juniorDeveloper.length; i++) {
-                    if (this.juniorDeveloper[index] != null) {
-                        System.out.println("index is full");
-                    } else if (this.juniorDeveloper[index] == null) {
-                        this.juniorDeveloper[index] = name;
-                    }
-                }
+       try {
+           if (juniorDeveloper[index] != null) {
+               System.out.println("index is full");
+           } else if (this.juniorDeveloper[index] == null) {
+               juniorDeveloper[index] = name;
+           }
+       }
+       catch (ArrayIndexOutOfBoundsException exception) {
+           System.out.println("index not found");
+       }
+
+    }
+
+    public void addEmployee(int index, MidDeveloper name) {
+
+      try{
+
+            if (this.midDeveloper[index] != null) {
+                System.out.println("index is full");
+            } else if (this.midDeveloper[index] == null) {
+                this.midDeveloper[index] = name;
             }
         }
+      catch (ArrayIndexOutOfBoundsException exception) {
+          System.out.println("index not found");
+      }
+    }
 
-        else if (role.equals("mid")) {
-            if (index >= midDeveloper.length) {
-                System.out.println("index is greater than length of the array");
-            } else {
-                for (int i = 0; i < midDeveloper.length; i++) {
-                    if (this.midDeveloper[index] != null) {
-                        System.out.println("index is full");
-                    } else if (this.midDeveloper[index] == null) {
-                        this.midDeveloper[index] = name;
-                    }
-                }
+    public void addEmployee(int index, SeniorDeveloper name) {
+        try {
+            if (this.seniorDeveloper[index] != null) {
+                System.out.println("index is full");
+            } else if (this.seniorDeveloper[index] == null) {
+                this.seniorDeveloper[index] = name;
             }
+        } catch (ArrayIndexOutOfBoundsException exception) {
+            System.out.println("index not found");
         }
-
-
-        else if (role.equals("senior")) {
-            if (index >= seniorDeveloper.length) {
-                System.out.println("index is greater than length of the array");
-            } else {
-                for (int i = 0; i < seniorDeveloper.length; i++) {
-                    if (this.seniorDeveloper[index] != null) {
-                        System.out.println("index is full");
-                    } else if (this.seniorDeveloper[index] == null) {
-                        this.seniorDeveloper[index] = name;
-                    }
-                }
-            }
-        }
-
     }
 
     @Override

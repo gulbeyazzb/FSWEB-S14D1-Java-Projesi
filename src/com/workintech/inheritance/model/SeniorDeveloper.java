@@ -1,10 +1,8 @@
 package com.workintech.inheritance.model;
 
 public class SeniorDeveloper extends Employee{
-    private String role;
-    public SeniorDeveloper(long id, String name, double salary,String role) {
-        super(id, name, salary);
-        this.role=role;
+    public SeniorDeveloper(long id, String name) {
+        super(id, name);
     }
 
     @Override
