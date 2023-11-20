@@ -54,7 +54,8 @@ public class Main {
         String[] middevelopers=new String[4];
         String[] sendevelopers=new String[4];
         HRManager hrManager=new HRManager(3,"Mehmet",60000,jundevelopers,middevelopers,sendevelopers);
-        hrManager.addEmployee(0,"Gülbeyaz","junior");
+        System.out.println("**************");
+        hrManager.addEmployee(3,"Gülbeyaz","mid");
         System.out.println(hrManager);
     }
 

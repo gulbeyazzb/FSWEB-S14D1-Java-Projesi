@@ -25,7 +25,7 @@ public class HRManager extends Employee {
     public void addEmployee(int index, String name, String role) {
 
         if (role.equals("junior")) {
-            if (index != juniorDeveloper.length) {
+            if (index >= juniorDeveloper.length) {
                 System.out.println("index is greater than length of the array");
             } else {
                 for (int i = 0; i < juniorDeveloper.length; i++) {
@@ -36,26 +36,31 @@ public class HRManager extends Employee {
                     }
                 }
             }
-        } else if (role.equals("mid")) {
-            if (index != midDeveloper.length) {
+        }
+
+        else if (role.equals("mid")) {
+            if (index >= midDeveloper.length) {
                 System.out.println("index is greater than length of the array");
             } else {
                 for (int i = 0; i < midDeveloper.length; i++) {
-                    if (midDeveloper[index] != null) {
+                    if (this.midDeveloper[index] != null) {
                         System.out.println("index is full");
-                    } else if (midDeveloper[index] == null) {
+                    } else if (this.midDeveloper[index] == null) {
                         this.midDeveloper[index] = name;
                     }
                 }
             }
-        } else if (role.equals("senior")) {
-            if (index != seniorDeveloper.length) {
+        }
+
+
+        else if (role.equals("senior")) {
+            if (index >= seniorDeveloper.length) {
                 System.out.println("index is greater than length of the array");
             } else {
                 for (int i = 0; i < seniorDeveloper.length; i++) {
-                    if (seniorDeveloper[index] != null) {
+                    if (this.seniorDeveloper[index] != null) {
                         System.out.println("index is full");
-                    } else if (seniorDeveloper[index] == null) {
+                    } else if (this.seniorDeveloper[index] == null) {
                         this.seniorDeveloper[index] = name;
                     }
                 }
